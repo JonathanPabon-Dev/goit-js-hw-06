@@ -1,12 +1,11 @@
-const ingredients = [
-  'Potatoes',
-  'Mushrooms',
-  'Garlic',
-  'Tomatos',
-  'Herbs',
-  'Condiments',
-];
+const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Condiments'];
 
-let list = document.getElementById("ingredients");
-let contain = ingredients.map(obj => `<li>${obj}</li>`).join(" ");
+let list = document.getElementById('ingredients');
+let contain = '';
+for (let ingredient of ingredients) {
+  let li = document.createElement('li');
+  li.textContent = ingredient;
+
+  contain += `${li.outerHTML}`;
+}
 list.innerHTML = contain;
